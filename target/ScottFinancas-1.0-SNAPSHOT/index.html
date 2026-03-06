@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="pt-BR" xml:lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #24cac0;
+        }
+        .login-form {
+            background: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            width: 350px;
+            text-align: center;
+        }
+        .login-form h2 {
+            margin-bottom: 20px;
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+            text-align: left;
+        }
+        input[type="email"], input[type="password"] {
+            width: 100%;
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+            margin-bottom: 15px;
+        }
+        .button-container {
+            display: flex;
+            justify-content: space-between;
+        }
+        button {
+            width: 48%;
+            padding: 10px;
+            background-color: #24cac0;
+            border: none;
+            color: #0b0b0b;
+            font-size: 16px;
+            cursor: pointer;
+            border-radius: 4px;
+        }
+
+        #error-message {
+            color: red;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+<div class="login-form">
+    <h1>Scott Finanças</h1>
+    <img src="https://static.vecteezy.com/system/resources/thumbnails/006/720/668/small_2x/dog-face-logo-free-vector.jpg" alt="Logo" style="max-width: 80%; height: 80%;">
+    <h3>Acesse sua conta</h3>
+    <form action="login" method="post">
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required>
+        <label for="senha">Senha:</label>
+        <input type="password" id="senha" name="senha" required>
+        <div id="error-message"></div>
+
+        <div class="button-container">
+            <button type="submit">Entrar</button>
+            <button type="button" onclick="window.location.href='cadastro.html'">Cadastre-se</button>
+        </div>
+    </form>
+</div>
+
+<script>
+    const params = new URLSearchParams(window.location.search);
+    if (params.get('error') === 'true') {
+        document.getElementById('error-message').innerHTML = '<p>Credenciais inválidas, tente novamente.</p>';
+    }
+</script>
+</body>
+</html>

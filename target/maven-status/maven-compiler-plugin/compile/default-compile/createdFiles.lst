@@ -1,0 +1,7 @@
+com\fintech\ConnectionManager.class
+com\fintech\entities\Movimentacao.class
+com\fintech\servlets\CadastrarServlet.class
+com\fintech\entities\Usuario.class
+com\fintech\dao\UsuarioDAO.class
+com\fintech\servlets\LoginServlet.class
+com\fintech\servlets\FinTech.class
